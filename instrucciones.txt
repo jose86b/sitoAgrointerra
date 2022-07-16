@@ -1,0 +1,7 @@
+1 en la terninal= "npm install" (no coregir ningun error de compatibilidad o de verciones )
+
+2 importar la base de datos agro_db
+
+3 inicar Xampp
+
+4 en la terminal= "npm run node"

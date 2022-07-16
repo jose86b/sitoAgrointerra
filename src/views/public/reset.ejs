@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../templates/head.ejs') -%>
+
+<body class="bg-primary1">
+	<%- include('../templates/header.ejs') -%>
+	<div class="container mt-5">
+		<div class="row">
+			<div class="col"></div>
+			<div class="col-5 text-white">
+				<h1 class="mt-5">Password Reset</h1>
+
+				<% if (msg == 'false') { %>
+					<div class="badge badge-danger my-3">Correo electrónico no registrado</div>
+				<% } %>
+
+				<% if (msg !== 'true') { %>
+
+					<form method="POST" action="/login/reset">
+						<input type="hidden" name="_csrf" value="<%= csrfToken %>">
+						<div class="form-group">
+							<label for="exampleInputEmail1">Dirección de correo electrónico</label>
+							<input type="email" class="form-control mb-1" name="email">
+							<div class="badge badge-warning text-wrap d-inline">Te enviaremos un correo electrónico con un reinicio
+								Contraseña</div>
+						</div>
+						<button type="submit" class="btn btn-warning float-right">Resetear</button>
+					</form>
+				<% } else { %>
+					<h4 class="mt-5">Se envió un correo electrónico a su buzón.</h4>
+				<% } %>
+			</div>
+			<div class="col"></div>
+		</div>
+	</div>
+</body>
+
+</html>
